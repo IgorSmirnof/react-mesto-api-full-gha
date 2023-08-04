@@ -1,0 +1,13 @@
+.popup__figure{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 75vw;
+  
+  /* Выводим в центр */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

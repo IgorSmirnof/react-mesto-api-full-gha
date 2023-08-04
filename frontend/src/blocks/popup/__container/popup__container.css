@@ -1,0 +1,22 @@
+.popup__container {
+  margin: 0 auto;
+  padding: 34px;
+  width: 430px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  /* Выводим в центр */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 640px) {
+  .popup__container {
+    padding: 25px;
+    width: 282px;
+  }
+}

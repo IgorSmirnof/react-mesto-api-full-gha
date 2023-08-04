@@ -1,0 +1,11 @@
+.header__entry {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}

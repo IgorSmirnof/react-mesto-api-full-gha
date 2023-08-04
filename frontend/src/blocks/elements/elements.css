@@ -1,0 +1,19 @@
+.elements {
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 51px;
+  max-width: 880px;
+}
+
+@media (max-width: 940px) {
+  .elements {
+    max-width: 581px;
+  }
+}
+
+@media (max-width: 640px) {
+  .elements {
+    max-width: 282px;
+    margin-top: 36px;
+  }
+}

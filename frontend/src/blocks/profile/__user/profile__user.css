@@ -1,0 +1,15 @@
+.profile__user {
+  margin: 0;
+  padding: 0;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .profile__user {
+    max-width: 282px;
+  }
+}
+
+

@@ -1,0 +1,13 @@
+.avatar__img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  transition: opacity 0.3s linear;
+}
+.avatar__img:hover {
+  opacity: .2;
+  cursor: pointer;
+}

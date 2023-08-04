@@ -1,0 +1,9 @@
+.input-error {
+  color: red;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  margin: 4px 0 5px 0;
+  padding: 0;
+  height: 15px;
+}

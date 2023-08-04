@@ -1,0 +1,12 @@
+.card {
+  margin: 0;
+  padding: 0;
+  max-width: 282px;
+  border: 0 solid transparent;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  position: relative;
+}

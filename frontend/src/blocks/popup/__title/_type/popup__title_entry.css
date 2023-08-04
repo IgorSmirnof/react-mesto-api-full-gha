@@ -1,0 +1,8 @@
+.popup__title_entry {
+  margin: 0 auto ;
+  /* margin: 0 auto 60px auto; */
+  max-width: 358px;
+  /* max-height: 330px; */
+  text-align: center;
+}
+
