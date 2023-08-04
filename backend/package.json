@@ -1,0 +1,30 @@
+{
+  "name": "express-mesto-gha",
+  "version": "1.14.1",
+  "description": "Проект Mesto: регистрация и авторизация на бэкенде",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "npx eslint ."
+  },
+  "author": "IgorSmirnof",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "celebrate": "^15.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.3.1",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.22"
+  }
+}
