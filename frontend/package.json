@@ -21,7 +21,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://IgorSmirnof.github.io/react-mesto-auth/",
   "eslintConfig": {
     "extends": [
       "react-app",
