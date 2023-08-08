@@ -13,7 +13,7 @@ export default function Main({
   cards
 }) {
   const currentUser = useContext(CurrentUserContext);
-
+  // console.log(currentUser);
   return (
     <main className="main">
       <section className="profile" aria-label="Информация о пользователе.">

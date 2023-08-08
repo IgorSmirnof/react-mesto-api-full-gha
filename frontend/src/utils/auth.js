@@ -1,5 +1,6 @@
 import checkResponse from './checkResponse';
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://localhost:4000';
+// export const BASE_URL = 'https://auth.nomoreparties.co';
 
 export function register(password, email) {
   return fetch(`${BASE_URL}/signup`, {
@@ -31,7 +32,8 @@ export function checkToken(token) {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${token}`
-    }
+    },
+    credentials: 'include',
   })
   // .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
 .then(checkResponse)

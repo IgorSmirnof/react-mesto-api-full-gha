@@ -55,7 +55,7 @@ function createUser(req, res, next) {
       });
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       if (err.code === 11000) {
         next(new ConflictError('Пользователь с данным email уже существует.'));
       } else if (err.name === 'ValidationError') {
@@ -70,13 +70,14 @@ function updateProfile(req, res, next) {
   const { name, about } = req.body;
   User
     .findByIdAndUpdate(req.user._id, { name, about }, { new: true, runValidators: true })
-    .then(
-      () => {
-        res.status(SUCCESS_CODE).send({ name, about });
-      },
-    )
+  //   .then(
+  //     () => {
+  //       res.status(SUCCESS_CODE).send({ name, about });
+  //     },
+  // )
+    .then((user) => res.status(SUCCESS_CODE).send(user))
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные.'));
       } else {
@@ -89,13 +90,14 @@ function updateAvatar(req, res, next) {
   const { avatar } = req.body;
   return User
     .findByIdAndUpdate(req.user._id, { avatar }, { new: true, runValidators: true })
-    .then(
-      () => {
-        res.status(SUCCESS_CODE).send({ avatar });
-      },
-    )
+  //   .then(
+  //     () => {
+  //       res.status(SUCCESS_CODE).send({ avatar });
+  //     },
+  // )
+    .then((user) => res.status(SUCCESS_CODE).send(user))
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные.'));
       } else {

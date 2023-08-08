@@ -4,15 +4,17 @@ class Api {
   constructor(config) {
     this._url = config.url;
     this._headers = config.headers;
-    this._authorization = config.headers["authorization"];
+    // this._authorization = config.headers["authorization"];
   }
   // получить данные с сервера
   getInitialCards() {
     return fetch(`${this._url}/cards`, {
+      method: "GET",
       headers: {
-        authorization: this._authorization,
         "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
+      credentials: 'include',
     })
     // .then((res) => this._checkResponse(res));
     .then(checkResponse)
@@ -25,7 +27,8 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: "GET",
       headers: {
-        authorization: this._authorization,
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
     })
       // .then((res) => this._checkResponse(res));
@@ -37,13 +40,14 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: {
-        authorization: this._authorization,
         "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
       body: JSON.stringify({
         name: data.name,
         about: data.about,
       }),
+      credentials: 'include',
     })
       // .then((res) => this._checkResponse(res));
     .then(checkResponse)
@@ -54,8 +58,8 @@ class Api {
     return fetch(`${this._url}/cards`, {
       method: "POST",
       headers: {
-        authorization: this._authorization,
         "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
       body: JSON.stringify({
         name: data.name,
@@ -91,7 +95,8 @@ class Api {
       return fetch(`${this._url}/cards/${dataId}/likes`, {
         method: "DELETE",
         headers: {
-          authorization: this._authorization,
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem('jwt')}`
         },
       })
         // .then((res) => this._checkResponse(res));
@@ -100,7 +105,8 @@ class Api {
       return fetch(`${this._url}/cards/${dataId}/likes`, {
         method: "PUT",
         headers: {
-          authorization: this._authorization,
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem('jwt')}`
         },
       })
         // .then((res) => this._checkResponse(res));
@@ -118,7 +124,8 @@ class Api {
     return fetch(`${this._url}/cards/${dataId}`, {
       method: "DELETE",
       headers: {
-        authorization: this._authorization,
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
     })
       // .then((res) => this._checkResponse(res));
@@ -130,12 +137,13 @@ class Api {
     return fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: {
-        authorization: this._authorization,
         "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
       body: JSON.stringify({
         avatar: data.avatar,
       }),
+      credentials: 'include',
     })
       // .then((res) => this._checkResponse(res));
     .then(checkResponse)

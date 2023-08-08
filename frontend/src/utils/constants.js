@@ -26,10 +26,11 @@ export const listCards = [
 ];
 
 export const apiConfig = {
-  url: 'https://mesto.nomoreparties.co/v1/cohort-65',
-  headers:{
-    authorization: '61b0dd3a-8b76-45b5-978b-e5e731000778',
-    'Content-Type': 'application/json'
-  }
+  url: 'http://localhost:4000',
+  // url: 'https://mesto.nomoreparties.co/v1/cohort-65',
+  // headers:{
+  //   authorization: '61b0dd3a-8b76-45b5-978b-e5e731000778',
+  //   'Content-Type': 'application/json'
+  // }
 }
 

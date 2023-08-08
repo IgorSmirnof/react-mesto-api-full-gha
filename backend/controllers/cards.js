@@ -16,7 +16,7 @@ function getCards(_req, res, next) {
 function deleteCard(req, res, next) {
   const { cardId } = req.params;
   const userId = req.user._id;
-  console.log(userId);
+  // console.log(userId);
   Card
     .findById(cardId)
     .orFail(new NotFoundError('Указанного id не существует'))
@@ -35,7 +35,7 @@ function createCard(req, res, next) {
   const { name, link } = req.body;
   return Card
     .create({ name, link, owner: req.user })
-    .then((card) => res.status(CREATE_CODE).send({ card }))
+    .then((card) => res.status(CREATE_CODE).send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные.'));
@@ -46,20 +46,23 @@ function createCard(req, res, next) {
 }
 
 function likeCard(req, res, next) {
-  const { cardId } = req.params;
+  // const { cardId } = req.params;
+  // console.log('likeCard', cardId);
   Card
-    .findByIdAndUpdate(cardId, { $addToSet: { likes: req.user._id } }, { new: true })
+    .findByIdAndUpdate(req.params.cardId, { $addToSet: { likes: req.user._id } }, { new: true })
     .orFail(() => new NotFoundError('Указанного id не существует'))
-    .then((card) => res.status(SUCCESS_CODE).send({ card, message: 'Like was added.' }))
+    .then((card) => { res.status(SUCCESS_CODE).send(card); })
+    // .then((card) => res.status(SUCCESS_CODE).send({ card, message: 'Like was added.' }))
     .catch(next);
 }
 
 function dislikeCard(req, res, next) {
-  const { cardId } = req.params;
+  // const { cardId } = req.params;
   Card
-    .findByIdAndUpdate(cardId, { $pull: { likes: req.user._id } }, { new: true })
+    .findByIdAndUpdate(req.params.cardId, { $pull: { likes: req.user._id } }, { new: true })
     .orFail(() => new NotFoundError('Указанного id не существует'))
-    .then((card) => res.status(SUCCESS_CODE).send({ card, message: 'Like was canceled.' }))
+    // .then((card) => { res.status(SUCCESS_CODE).send(card._id); })
+    .then((card) => { res.status(SUCCESS_CODE).send(card); })
     .catch(next);
 }
 
