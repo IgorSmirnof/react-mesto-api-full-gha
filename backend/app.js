@@ -15,7 +15,7 @@ const routes = require('./routes');
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://igo.nomoreparties.co', 'http://api.igo.nomoreparties.co', 'https://igo.nomoreparties.co', 'https://api.igo.nomoreparties.co'], credentials: true, maxAge: 30 }));
+app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001', 'http://igo.nomoreparties.co', 'http://api.igo.nomoreparties.co', 'https://igo.nomoreparties.co', 'https://api.igo.nomoreparties.co'], credentials: true, maxAge: 30 }));
 app.use(helmet());
 app.use(express.json());
 
