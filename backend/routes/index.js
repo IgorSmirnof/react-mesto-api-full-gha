@@ -20,7 +20,7 @@ router.post(
 );
 
 router.post(
-  '/signup',
+  '/signup555',
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().min(2).max(30),
