@@ -4,7 +4,7 @@ export const BASE_URL = 'https://api.igo.nomoreparties.co';
 // export const BASE_URL = 'https://auth.nomoreparties.co';
 
 export function register(password, email) {
-  return fetch(`${BASE_URL}signup`, {
+  return fetch(`${BASE_URL}/signup777`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
