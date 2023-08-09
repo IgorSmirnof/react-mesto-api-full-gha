@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const { errors } = require('celebrate');
 const cors = require('cors');
 const errorHandler = require('./middlewares/errorHandler');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 // const { PORT = process.env.PORT_APP, DB_URL = process.env.DB_URL_APP } = process.env;
 const PORT = 3000;
@@ -14,6 +15,7 @@ const DB_URL = 'mongodb://127.0.0.1:27017/mestodb';
 const routes = require('./routes');
 
 const app = express();
+app.use(requestLogger);
 
 app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001', 'http://igo.nomoreparties.co', 'https://igo.nomoreparties.co'], credentials: true, maxAge: 30 }));
 app.use(helmet());
@@ -25,6 +27,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 app.use(routes);
+app.use(errorLogger);
 
 app.use(errors());
 app.use(errorHandler);

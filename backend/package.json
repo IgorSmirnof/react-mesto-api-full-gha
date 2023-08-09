@@ -20,7 +20,9 @@
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.1",
-    "validator": "^13.9.0"
+    "validator": "^13.9.0",
+    "winston": "^3.10.0",
+    "winston-express": "^0.1.1"
   },
   "devDependencies": {
     "eslint": "^8.44.0",
