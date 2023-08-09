@@ -26,7 +26,7 @@ export const listCards = [
 ];
 
 export const apiConfig = {
-  url: 'api.igo.nomoreparties.co/',
+  url: 'api.igo.nomoreparties.co',
   // url: 'http://localhost:4000',
   // url: 'https://mesto.nomoreparties.co/v1/cohort-65',
   // headers:{
