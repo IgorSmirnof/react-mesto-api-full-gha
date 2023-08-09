@@ -19,6 +19,12 @@ app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001', 'http:
 app.use(helmet());
 app.use(express.json());
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use(routes);
 
 app.use(errors());
