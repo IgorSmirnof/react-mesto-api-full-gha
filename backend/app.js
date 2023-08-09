@@ -24,7 +24,6 @@ app.get('/crash-test', () => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
-
 app.use(routes);
 
 app.use(errors());
