@@ -16,7 +16,6 @@ function getCards(_req, res, next) {
 function deleteCard(req, res, next) {
   const { cardId } = req.params;
   const userId = req.user._id;
-  // console.log(userId);
   Card
     .findById(cardId)
     .orFail(new NotFoundError('Указанного id не существует'))
