@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = process.env;
 const UnauthorizedError = require('../utils/errors/401-Unauthorized');
 
 const auth = (req, res, next) => {
@@ -10,8 +11,9 @@ const auth = (req, res, next) => {
   const token = authorization.replace('Bearer ', '');
   let payload;
   try {
-    payload = jwt.verify(token, 'very-secret-key');
-    console.log('success payload:', payload);
+    payload = jwt.verify(token, JWT_SECRET);
+    // payload = jwt.verify(token, 'very-secret-key');
+    // console.log('success payload:', payload);
   } catch (err) {
     return next(new UnauthorizedError('Необходима авторизация 02'));
   }

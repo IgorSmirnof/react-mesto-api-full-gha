@@ -7,9 +7,9 @@ const { errors } = require('celebrate');
 const cors = require('cors');
 const errorHandler = require('./middlewares/errorHandler');
 
-// const { PORT = process.env.PORT_APP, DB_URL = process.env.DB_URL_APP } = process.env;
-const PORT = 3000;
-const DB_URL = 'mongodb://127.0.0.1:27017/mestodb';
+const { PORT = process.env.PORT_APP, DB_URL = process.env.DB_URL_APP } = process.env;
+// const PORT = 3000;
+// const DB_URL = 'mongodb://127.0.0.1:27017/mestodb';
 
 const routes = require('./routes');
 
