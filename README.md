@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.51.231
+IP 158.160.51.231
 
 Frontend https://igo.nomoreparties.co
 
