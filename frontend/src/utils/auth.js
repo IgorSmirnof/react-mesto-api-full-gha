@@ -34,7 +34,6 @@ export function checkToken(token) {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${token}`
     },
-    credentials: 'include',
   })
   // .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
 .then(checkResponse)

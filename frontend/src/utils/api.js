@@ -14,7 +14,7 @@ class Api {
         "Content-Type": "application/json",
         authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
-      credentials: 'include',
+      // credentials: 'include',
     })
     // .then((res) => this._checkResponse(res));
     .then(checkResponse)
@@ -47,7 +47,7 @@ class Api {
         name: data.name,
         about: data.about,
       }),
-      credentials: 'include',
+      // credentials: 'include',
     })
       // .then((res) => this._checkResponse(res));
     .then(checkResponse)
@@ -143,7 +143,7 @@ class Api {
       body: JSON.stringify({
         avatar: data.avatar,
       }),
-      credentials: 'include',
+      // credentials: 'include',
     })
       // .then((res) => this._checkResponse(res));
     .then(checkResponse)
