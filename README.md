@@ -1,3 +1,5 @@
+# Att! сервер на ВМ остановлен, для запуска пришлите запрос удобным для вас способом.
+
 [![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
 
 # react-mesto-api-full
